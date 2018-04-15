@@ -5,12 +5,13 @@ body {
   box-sizing: border-box;
 }
 
+/* The container within all is located */
 .container {
   max-width: 960px;
   margin: 0 auto;
-
 }
 
+/* The header */
 .header {
   background-color: black;
 }
@@ -28,6 +29,7 @@ body {
   margin-right: 1rem;
 }
 
+/* Main banner, reaching outside/above the container */
 .main_banner {
   background-image: url('https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/moto.jpeg');
   background-position: center;
@@ -36,6 +38,7 @@ body {
   height: 25rem;
 }
 
+/* The black title boc within the main image */
 .title_box {
   position: relative;
   top: 9rem;
@@ -55,6 +58,7 @@ body {
   font-size: 2rem;
 }
 
+/* Navigation bar */
 nav {
   background-color: firebrick;
   color: white;
@@ -67,6 +71,11 @@ nav ul {
   justify-content: space-between;
 }
 
+.mobile_menu {
+  display: none;
+}
+
+/* Products section */
 .products {
   display: flex;
   justify-content: space-between;
@@ -99,6 +108,7 @@ nav ul {
   padding: 0.5rem;
 }
 
+/* Info section */
 .info_section {
   display: flex;
   justify-content: space-between;
@@ -117,8 +127,72 @@ nav ul {
   margin-bottom: 0.3rem;
 }
 
+/* The footer */
 footer {
   padding: 2.5rem 0;
   background-color: black;
   color: white;
+}
+
+/* Forr screen sizes max 1024px */
+@media only screen and (max-width: 1024px) {
+  nav ul {
+    display: none;
+  }
+
+  .mobile_menu {
+    display: block;
+    text-align: center;
+  }
+
+  .product_box {
+    width: 47%;
+  }
+
+  .product_box.glasses {
+    display: none;
+  }
+}
+
+/* Forr screen sizes max 470px */
+@media only screen and (max-width: 470px) {
+  .products,
+  .info_section {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .title_box {
+    top: 10rem;
+    padding: 1rem 2rem;
+  }
+
+  .title_box p {
+    font-size: 0.77rem;
+  }
+
+  .title_box h1 {
+    font-size: 1rem;
+  }
+
+  .main_banner {
+    height: 15rem;
+  }
+
+  .product_box {
+    width: 90%;
+  }
+
+  .product_box.watch {
+    display: none;
+  }
+
+  .info_box {
+    width: 90%;
+    margin-bottom: 0.5rem;
+  }
+
+  footer {
+    text-align: center;
+  }
 }
